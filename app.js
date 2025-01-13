@@ -27,9 +27,15 @@ app.use("/companies", companiesRoutes);
 app.use("/users", usersRoutes);
 app.use("/jobs", jobsRoutes);
 
+// Addeded the next two to be able to render on Render.com
 app.get('/', (req, res) => {
   res.send('Welcome to my Jobly Express Backend!');
 });
+
+app.get('/favicon.ico', (req, res) => {
+  res.status(204).send(); // No Content
+});
+//////   END render required routes
 
 
 /** Handle 404 errors -- this matches everything */
